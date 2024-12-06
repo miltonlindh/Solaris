@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Solsystemet</title> 
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <h1>Solsystemet</h1> <!--huvudrubrik -->
+        <h2>Solaris</h2> <!--underrubrik -->
+    </header>
+    <main class="solar-system">
+        <section class="sun" aria-label="Solen" data-planet="Solen"></section> <!-- solen -->
+        <!--omloppsbana till alla planeter-->
+        <article class="orbit orbit-mercury" aria-label="Merkurius' omloppsbana"></article> 
+        <article class="orbit orbit-venus" aria-label="Venus' omloppsbana"></article> 
+        <article class="orbit orbit-earth" aria-label="Jordens omloppsbana"></article> 
+        <article class="orbit orbit-mars" aria-label="Mars' omloppsbana"></article> 
+        <article class="orbit orbit-jupiter" aria-label="Jupiters omloppsbana"></article> 
+        <article class="orbit orbit-saturn" aria-label="Saturnus' omloppsbana"></article> 
+        <article class="orbit orbit-uranus" aria-label="Uranus' omloppsbana"></article> 
+        <article class="orbit orbit-neptune" aria-label="Neptunus' omloppsbana"></article> 
+        <!--planeterna-->
+        <section class="planet mercury" aria-label="Merkurius" data-planet="Merkurius"></section> 
+        <section class="planet venus" aria-label="Venus" data-planet="Venus"></section> 
+        <section class="planet earth" aria-label="Jorden" data-planet="Jorden"></section> 
+        <section class="planet mars" aria-label="Mars" data-planet="Mars"></section> 
+        <section class="planet jupiter" aria-label="Jupiter" data-planet="Jupiter"></section> 
+        <section class="planet saturn" aria-label="Saturnus" data-planet="Saturnus"></section> 
+        <section class="rings rings-saturn1" aria-label="Saturnus' ringar" data-planet="Saturnus' ringar"></section> <!--saturnus ringar -->
+        <section class="planet uranus" aria-label="Uranus" data-planet="Uranus"></section> 
+        <section class="planet neptune" aria-label="Neptunus" data-planet="Neptunus"></section>
+      
+        <input class="searchbar" type="text" id="searchText" value="Sök info här..." onblur="searchBlur(this)" onclick="searchClick(this)" onchange="searchChange(this)"> <!--sökruta-->
+    
+        <script type="text/javascript" src="script.js"></script> 
+    </main>
+</body>
+</html>
+

@@ -1,0 +1,181 @@
+body {
+    background: radial-gradient(circle at 50% 50%, #000000, #020020); /* backgrundsfärg som skiftar mellan svart och blått */
+    display: flex; /*gör layouten flexibel */
+    justify-content: center; /* centrerar innehållet horisontellt*/
+    align-items: center; /* centrerar innehållet vertikalt*/
+    height: 100vh; /*gör så det täcker hela sidan i höjd*/
+    margin: 0; /*tar bort standardmargins */
+}
+
+.custom-planet {
+    left: -30%; /*sätter position från vänster*/
+    top: 3%; /*position från toppen*/
+    box-shadow: #ffffff; /* ger en vit skugga*/
+}
+
+.planet-container {
+    display: flex; 
+    flex-direction: column; /* flex element i en kolumn */
+    width: 90%; /*90% av förälderbredden*/
+    max-width: 800px; /*ger maximal bredd till 800px*/
+}
+
+.planet-details {
+    list-style: none; /*tar bort punkterna vid list funktionen*/
+    padding: 0; /*tar bort standard padding*/
+    display: flex; /*flexbox för detaljer */
+    flex-direction: column; 
+    width: 100%; /*full bredd */
+}
+
+.planet-container h2 {
+    margin-top: 0; /*tar bort margin över*/
+    position: absolute; /*absolut positionering för rubriken*/
+    color: rgb(255, 255, 255); /* vit färg på texten*/
+    top: 1%; /*position från toppen*/
+    left: 45%; /*position från vänster sida */
+    font-size: 3em; /*fontstorlek*/
+    text-transform: uppercase; /*gör om texten till stor text */
+}
+
+.planet-details .latinName {
+    position: absolute; 
+    color: goldenrod; /*guldig färg*/
+    margin-top: 5%; 
+    left: 45%; 
+    font-size: 1.9em; 
+    text-transform: uppercase; 
+}
+
+.planet-details .desc {
+    position: relative; /* Relativ positionering för beskrivningen */
+    font-family: 'Times New Roman', Times, serif; /*ändrar fonten*/
+    color: #808080; 
+    width: 70%; /*bredd 70%*/
+    left: 45%; 
+    margin-bottom: 2%; /*margin under*/
+}
+/*övre delen av infon */
+.planet-details .circumference,
+.planet-details .distance {
+    position: absolute; 
+    color: #ffffff; 
+    margin-top: var(--custom-margin, 17%); /*använder "custom-margin" om den finns annars 17% */
+}
+/*undre delen av infon */
+.planet-details .temp-day,
+.planet-details .temp-night {
+    position: absolute; 
+    color: #ffffff; 
+    margin-top: var(--custom-margin, 27%); 
+}
+
+.planet-details .moons {
+    position: absolute; 
+    color: #ffffff; 
+    margin-top: var(--custom-margin, 37%); 
+}
+/* försökte få positioneringen responsiv mot "desc" så bra jag kunde*/
+.planet-details .circumference {
+    top: calc(75% + var(--desc-height)); /*justerar ner 75% från toppen, plus höjden av beskrivningen */
+    left: 45%; 
+    width: 5%; 
+}
+/* position för distans*/
+.planet-details .distance {
+    top: calc(75% + var(--desc-height)); 
+    left: 75%; 
+}
+/*position för temp-dag*/
+.planet-details .temp-day {
+    top: calc(90% + var(--desc-height)); 
+    left: 45%; 
+    width: 4%; 
+}
+/* position för temp-natt*/
+.planet-details .temp-night {
+    top: calc(90% + var(--desc-height)); 
+    left: 75%; 
+    width: 5%; 
+}
+/* position för månar*/
+.planet-details .moons {
+    top: calc(105% + var(--desc-height)); /* Position från toppen justerat med beskrivningens höjd */
+    left: 45%; /* Position från vänster sida */
+}
+/*ändrar position, färg osv för omkrets och distans rubrik*/
+.planet-details .circumference-title,
+.planet-details .distance-title {
+    position: absolute; 
+    color: goldenrod; 
+    text-align: center; 
+    font-size: 1em; 
+    text-transform: uppercase; 
+    margin-top: var(--custom-margin, 14%); /*använder "custom-margin" om den finns annars 14%*/
+}
+/*ändrar position, färg osv för temp-dag/natt rubrikem*/
+.planet-details .temp-day-title,
+.planet-details .temp-night-title {
+    position: absolute; 
+    color: goldenrod; 
+    text-align: center; 
+    font-size: 1em; 
+    text-transform: uppercase; 
+    margin-top: var(--custom-margin, 24%); /*anpassad margin */
+}
+/*ändrar position, färg osv för rubriken för månen */
+.planet-details .moons-title {
+    position: absolute; 
+    color: goldenrod; 
+    text-align: center; 
+    font-size: 1em; 
+    text-transform: uppercase; 
+    margin-top: var(--custom-margin, 34%); 
+}
+/*rubrik för omkrets*/
+.planet-details .circumference-title {
+    top: calc(67% + var(--desc-height)); 
+    left: 45%; 
+}
+/*rubrik för distans från solen */
+.planet-details .distance-title {
+    top: calc(67% + var(--desc-height)); 
+    left: 75%; 
+}
+/*rubrik för temp-dag */
+.planet-details .temp-day-title {
+    top: calc(82.8% + var(--desc-height)); 
+    left: 45%; 
+}
+/*rubrik för temp-natt */
+.planet-details .temp-night-title {
+    top: calc(82.8% + var(--desc-height)); 
+    left: 75%; 
+}
+/*rubrik för månen */
+.planet-details .moons-title {
+    top: calc(97.8% + var(--desc-height)); 
+    left: 45%; 
+}
+/* stjärnor*/
+.star {
+    width: 2px; 
+    height: 2px; 
+    background: #fff; 
+    border-radius: 50%; /*rundar hörn */
+    box-shadow: 0 0 1vw 0.09vw rgba(255, 255, 255, 0.5), /*en ljus skugga */
+                inset 0.1vw 0.1vw 0.05vw rgba(0, 0, 0, 0.5); /*inre skugga */
+    animation: twinkle 1.5s infinite ease-in-out; /*animering för blinkande effekt */
+}
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; } /*start/slut effekter*/
+    50% { opacity: 1; } /*mellaneffekt */
+}
+
+.custom-planet {
+    position: absolute;
+    left: -30%; 
+    top: 4%; 
+    
+}
+

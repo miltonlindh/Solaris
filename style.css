@@ -1,0 +1,281 @@
+/*länkar till font-family lora*/
+@font-face {
+    font-family: 'lora'; 
+    src: url('https://fonts.googleapis.com/css?family=Lora');
+}
+
+body { 
+    background: radial-gradient(circle at 50% 50%, #000000, #020020); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0; 
+    overflow: hidden; 
+}
+/*fixa huvudrubriken*/
+h1 {
+    color: white;
+    position: absolute;
+    text-align: center;
+    left: 44%;
+    top: -10.5px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+}
+/*underrubriken*/
+h2 {
+    position: absolute;
+    top: 3%;
+    left: 47%;
+    color: #ffd029;
+    font-family: 'lora' monospace;
+    
+    text-transform: uppercase;
+}
+
+/*effekt för hover på solen samt standard ljusstyrkan*/
+.planet, .sun {
+    transition: all 0.3s ease-in-out;
+    filter: brightness(1);
+}
+/*ökar ljusstyrkan vid hover*/
+.planet:hover, .sun:hover{
+    filter: brightness(1.5); 
+}
+
+/*håller allt på rätt plats i planet info*/
+.planet-container {
+    position: relative;
+}
+/*justeringar för sökfältet*/
+.searchbar {
+    display: flex;
+    position: absolute;
+    left: -2%;
+    top: 24%;
+    height: 1%;
+    width: 12%;
+    background-color: transparent;
+    color: grey;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid white;
+    text-align: center;
+    font-family: 'lora' serif;
+    font-size: 20px;
+}
+/*storlek på solsystemet*/
+.solar-system {
+    display: flex;
+    position: relative;
+    width: 90vw;
+    height: 90vw;
+}
+/*planeternas omloppsbanor*/
+.orbit {
+    position: absolute;
+    border: 0.3vw solid #FFF;
+    border-radius: 50%;
+    transform: rotateX(112deg);
+    box-shadow: 0 0 1vw 0.15vw rgba(255, 255, 255, 0.5), inset 0.1vw 0.1vw 0.25vw rgba(125, 101, 185, 0.736);
+    z-index: 0;
+}
+/*solen*/
+.sun, .planet {
+    position: absolute;
+    border-radius: 50%;
+}
+/*solen utseende och position*/
+.sun {
+    top: 50%;
+    left: 50%;
+    width: 7vw;
+    height: 7vw;
+    background: radial-gradient(circle, yellow, orange, red);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 3vw yellow;
+    z-index: 1;
+}
+/*omloppsbana markuriu*/
+.orbit-mercury {
+    width: 20%;
+    height: 20%;
+    top: 50%;
+    left: 50%;
+    margin-top: -10%;
+    margin-left: -10%;
+}
+/*omloppsbana venus*/
+.orbit-venus {
+    width: 30%;
+    height: 30%;
+    top: 50%;
+    left: 50%;
+    margin-top: -15%;
+    margin-left: -15%;
+}
+/*omloppsbana jorden*/
+.orbit-earth {
+    width: 40%;
+    height: 40%;
+    top: 50%;
+    left: 50%;
+    margin-top: -20%;
+    margin-left: -20%;
+}
+/*omloppsbana mars*/
+.orbit-mars {
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    margin-top: -25%;
+    margin-left: -25%;
+}
+/*omloppsbana jupiter*/
+.orbit-jupiter {
+    width: 60%;
+    height: 60%;
+    top: 50%;
+    left: 50%;
+    margin-top: -30%;
+    margin-left: -30%;
+}
+/*omloppsbana saturnus*/
+.orbit-saturn {
+    width: 70%;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    margin-top: -35%;
+    margin-left: -35%;
+}
+/*omloppsbana uranus */
+.orbit-uranus {
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    margin-top: -40%;
+    margin-left: -40%;
+}
+/*omloppsbana neptunus*/
+.orbit-neptune {
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    margin-top: -45%;
+    margin-left: -45%;
+}
+/*markurius position och utssende*/
+.mercury {
+    width: 1.5vw;
+    height: 1.5vw;
+    background: radial-gradient(circle, #aaaaaa, #555555);
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0.1vw 0.1vw 0.25vw rgba(0,0,0,0.5);
+}
+/*venus position och utseende*/
+.venus {
+    width: 2vw;
+    height: 2vw;
+    background: radial-gradient(circle, #f5d6a5, #d4a04b);
+    top: 44.7%;
+    left: 53.9%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0.1vw 0.1vw 0.25vw rgba(0,0,0,0.5);
+    z-index: 1;
+}
+/*jorden psotion och utseende*/
+.earth {
+    width: 2vw;
+    height: 2vw;
+    background: radial-gradient(circle at 50% 90%, #032f55, #5c9b4c);
+    top: 43.2%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0.1vw 0.1vw 0.25vw rgba(0,0,0,0.5);
+    z-index: 1;
+}
+/*mars position och utseende*/
+.mars {
+    width: 1.5vw;
+    height: 1.5vw;
+    background: radial-gradient(circle, #e06666, #990000);
+    top: 46%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at 50% 30%, #e06666, #990000), radial-gradient(circle at 50% 70%, #ffffff, #e06666);
+    box-shadow: inset 0.1vw 0.1vw 0.25vw rgba(0,0,0,0.5);
+    z-index: 1;
+}
+/*jupiter position och utseende*/
+.jupiter {
+    width: 3vw;
+    height: 3vw;
+    background: radial-gradient(circle, #d9a066, #5c3a20);
+    top: 55%;
+    left: 23.5%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, #d9a066, #5c3a20), linear-gradient(45deg, #d9a066 30%, #a52a2a 35%, #5c3a20 70%);
+    box-shadow: inset 0.1vw 0.1vw 0.25vw rgba(0,0,0,0.5);
+    z-index: 1;
+}
+/*saturnus position och utseende*/
+.saturn {
+    width: 2.5vw;
+    height: 2.5vw;
+    background: radial-gradient(circle, #e6b8af, #b45f06);
+    top: 63%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 1vw 0.5vw rgba(218, 165, 32, 0.5), inset 0.1vw 0.1vw 0.25vw rgba(0,0,0,0.5);
+    z-index: 1;
+}
+/*saturunus ringar*/
+.rings-saturn1 {
+    position: absolute;
+    top: 62.3%;
+    left: 36.8%;
+    width: 5vw;
+    height: 0.5vw;
+    border: 0.5vw solid rgba(218, 165, 32, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 1vw 0.1vw rgba(218, 165, 32, 0.5);
+    transform: rotateX(170deg);
+}
+/*uranus utseende och position*/
+.uranus {
+    width: 2vw;
+    height: 2vw;
+    background: radial-gradient(circle, #76a5af, #134f5c);
+    top: 64.5%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+/*neptunus position och utseende*/
+.neptune {
+    width: 2vw;
+    height: 2vw;
+    background: radial-gradient(circle, #6fa8dc, #0b5394);
+    top: 62.9%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+/*stjärnor*/
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 1vw 0.09vw rgba(255, 255, 255, 0.5), inset 0.1vw 0.1vw 0.05vw;
+}
