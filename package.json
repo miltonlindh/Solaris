@@ -1,0 +1,20 @@
+{
+  "name": "solaris",
+  "version": "1.0.0",
+  "main": "customPlanet.js",
+  "scripts": {
+   "start": "json-server --watch db.json --port 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miltonlindh/Solaris.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miltonlindh/Solaris/issues"
+  },
+  "homepage": "https://github.com/miltonlindh/Solaris#readme",
+  "description": ""
+}
