@@ -45,11 +45,11 @@ class CustomPlanet {
 
 async function addCustomPlanetToScreen(planetName) {
     try {
-        console.log(`Fetching data for planet: ${planetName}`);
-        const response = await fetch('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', {
+        const response = await fetch('http://localhost:3000/bodies', {
             method: 'GET',
-            headers: { 'x-zocom': 'solaris-2ngXkR6S02ijFrTP' }
+            headers: { 'Content-Type': 'application/json' }
         });
+        
 
         if (!response.ok) {
             throw new Error("Could not fetch resource"); //om datan ej hittas blir det error

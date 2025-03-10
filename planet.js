@@ -18,10 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchPlanetData(planetName, planetNameElement, planetDataElement) {
     try {
-        const response = await fetch('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', {
+        const response = await fetch('http://localhost:3000/bodies', {
             method: 'GET',
-            headers: { 'x-zocom': 'solaris-2ngXkR6S02ijFrTP' }
-        }); //hämtar data från API
+            headers: { 'Content-Type': 'application/json' }
+        });
+        
+        
+        
+        
+         //hämtar data från API
 
         if (!response.ok) {
             throw new Error("Could not fetch resource"); //om data ej kan hämtas

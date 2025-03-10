@@ -50,10 +50,12 @@ const fetchData = async (planetName) =>{
 
     try {
         console.log("Fetching data for planet:", planetName);//loggar vilket planetnamn som ska hämtas
-        const response = await fetch('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', {
+        const response = await fetch('http://localhost:3000/bodies', {
             method: 'GET',
-            headers: { 'x-zocom': 'solaris-2ngXkR6S02ijFrTP' }
+            headers: { 'Content-Type': 'application/json' }
         });
+        
+        
        //kontorllerar om svaret inte är ok(skickar ett fel om det inte är ok)
         if (!response.ok) {
             throw new Error("Could not fetch resource");
